@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfor4cdhady8d"]
+[gd_scene load_steps=21 format=3 uid="uid://cfor4cdhady8d"]
 
 [ext_resource type="Texture2D" uid="uid://dcknfmi87c040" path="res://Assets/h2o hackathon assets/freetileset/png/NEW Tiles/tile spritesheet.png" id="1_ep5pf"]
 [ext_resource type="Texture2D" uid="uid://hwgw3q6pl0ja" path="res://Assets/h2o hackathon assets/freetileset/png/house spritesheet/house.png" id="2_evcgn"]
@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dl6i72gdq6u6s" path="res://Scene/Platforms/box.tscn" id="4_hd0p1"]
 [ext_resource type="Texture2D" uid="uid://de372nv7h2kxl" path="res://Assets/h2o hackathon assets/freetileset/png/house spritesheet/house spritesheet.png" id="4_vwfbn"]
 [ext_resource type="PackedScene" uid="uid://onugyp1q0g5y" path="res://Scene/Characters/character_body_2d.tscn" id="5_tm2rq"]
-[ext_resource type="Texture2D" uid="uid://bdhdo7h3f4wx" path="res://Assets/h2o hackathon assets/Objects/radio.png" id="5_twvql"]
 [ext_resource type="PackedScene" uid="uid://cu27wiocnm6ra" path="res://Scene/area_2d.tscn" id="6_gb46t"]
 [ext_resource type="Texture2D" uid="uid://dsqx8nygn8l2m" path="res://Assets/h2o hackathon assets/freetileset/png/BG/BG.png" id="8_by68j"]
 [ext_resource type="FontFile" uid="uid://ja6f55vg6iq5" path="res://Assets/h2o hackathon assets/fonts/PixelOperator8.ttf" id="9_7afgd"]
 [ext_resource type="FontFile" uid="uid://ck6f8thibspcd" path="res://Assets/h2o hackathon assets/fonts/PixelOperator8-Bold.ttf" id="10_cf8p6"]
+[ext_resource type="PackedScene" path="res://Scene/Characters/snake.tscn" id="11_fvmqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yfwc"]
 texture = ExtResource("1_ep5pf")
@@ -372,13 +372,6 @@ texture_region_size = Vector2i(32, 32)
 0:7/0/physics_layer_0/angular_velocity = 0.0
 0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivjor"]
-texture = ExtResource("5_twvql")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-
 [sub_resource type="TileSet" id="TileSet_3t681"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -386,7 +379,6 @@ sources/0 = SubResource("TileSetAtlasSource_2yfwc")
 sources/1 = SubResource("TileSetAtlasSource_68i5r")
 sources/2 = SubResource("TileSetAtlasSource_vjpcr")
 sources/3 = SubResource("TileSetAtlasSource_vnkt3")
-sources/4 = SubResource("TileSetAtlasSource_ivjor")
 
 [sub_resource type="Animation" id="Animation_ylfv7"]
 length = 2.0
@@ -470,14 +462,10 @@ process_callback = 0
 limit_bottom = 140
 position_smoothing_enabled = true
 
-[node name="Area2D" parent="." instance=ExtResource("6_gb46t")]
-position = Vector2(193, 44)
+[node name="labels" type="Node" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(337, -1)
-shape = SubResource("RectangleShape2D_ichi1")
-
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="labels"]
+z_index = -2
 offset_left = -63.0
 offset_top = -127.0
 offset_right = 541.0
@@ -487,7 +475,8 @@ theme_override_fonts/font = ExtResource("9_7afgd")
 theme_override_font_sizes/font_size = 10
 text = "Oh no! A flood is happening in San Joaquin County"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="labels"]
+z_index = -2
 offset_left = -59.0
 offset_top = -106.0
 offset_right = 144.0
@@ -496,6 +485,13 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("10_cf8p6")
 text = "space to jump
 "
+
+[node name="Area2D" parent="." instance=ExtResource("6_gb46t")]
+position = Vector2(193, 44)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(337, -1)
+shape = SubResource("RectangleShape2D_ichi1")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -532,3 +528,6 @@ texture = ExtResource("8_by68j")
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sprite2D/Sprite2D2/Sprite2D/Sprite2D"]
 position = Vector2(-2997, 5)
 texture = ExtResource("8_by68j")
+
+[node name="Snake" parent="." instance=ExtResource("11_fvmqd")]
+position = Vector2(1445, -177)
