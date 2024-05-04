@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cfor4cdhady8d"]
+[gd_scene load_steps=21 format=3 uid="uid://cfor4cdhady8d"]
 
 [ext_resource type="Texture2D" uid="uid://dcknfmi87c040" path="res://Assets/h2o hackathon assets/freetileset/png/NEW Tiles/tile spritesheet.png" id="1_ep5pf"]
 [ext_resource type="Texture2D" uid="uid://hwgw3q6pl0ja" path="res://Assets/h2o hackathon assets/freetileset/png/house spritesheet/house.png" id="2_evcgn"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dsqx8nygn8l2m" path="res://Assets/h2o hackathon assets/freetileset/png/BG/BG.png" id="8_by68j"]
 [ext_resource type="FontFile" uid="uid://ja6f55vg6iq5" path="res://Assets/h2o hackathon assets/fonts/PixelOperator8.ttf" id="9_7afgd"]
 [ext_resource type="FontFile" uid="uid://ck6f8thibspcd" path="res://Assets/h2o hackathon assets/fonts/PixelOperator8-Bold.ttf" id="10_cf8p6"]
+[ext_resource type="PackedScene" path="res://Scene/Characters/snake.tscn" id="11_fvmqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yfwc"]
 texture = ExtResource("1_ep5pf")
@@ -485,17 +486,6 @@ theme_override_fonts/font = ExtResource("10_cf8p6")
 text = "space to jump
 "
 
-[node name="Label3" type="Label" parent="labels"]
-z_index = -2
-offset_left = 1384.0
-offset_top = -218.0
-offset_right = 1627.0
-offset_bottom = -195.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_7afgd")
-theme_override_font_sizes/font_size = 10
-text = "Yay a radio! Help is on the way!"
-
 [node name="Area2D" parent="." instance=ExtResource("6_gb46t")]
 position = Vector2(193, 44)
 
@@ -538,3 +528,6 @@ texture = ExtResource("8_by68j")
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sprite2D/Sprite2D2/Sprite2D/Sprite2D"]
 position = Vector2(-2997, 5)
 texture = ExtResource("8_by68j")
+
+[node name="Snake" parent="." instance=ExtResource("11_fvmqd")]
+position = Vector2(1445, -177)
