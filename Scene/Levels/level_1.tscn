@@ -225,7 +225,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ichi1"]
-size = Vector2(682, 20)
+size = Vector2(670, 20)
 
 [node name="Level 1" type="Node"]
 
@@ -268,5 +268,5 @@ position_smoothing_enabled = true
 position = Vector2(193, 44)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(331, 0)
+position = Vector2(337, 0)
 shape = SubResource("RectangleShape2D_ichi1")
