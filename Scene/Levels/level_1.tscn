@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfor4cdhady8d"]
+[gd_scene load_steps=15 format=3 uid="uid://cfor4cdhady8d"]
 
 [ext_resource type="Texture2D" uid="uid://dcknfmi87c040" path="res://Assets/h2o hackathon assets/freetileset/png/NEW Tiles/tile spritesheet.png" id="1_ep5pf"]
 [ext_resource type="Texture2D" uid="uid://hwgw3q6pl0ja" path="res://Assets/h2o hackathon assets/freetileset/png/house spritesheet/house.png" id="2_evcgn"]
 [ext_resource type="Texture2D" uid="uid://ckaao16csx1h7" path="res://Assets/h2o hackathon assets/freetileset/png/house spritesheet/house-flooded.png" id="3_gxhcd"]
 [ext_resource type="PackedScene" uid="uid://dl6i72gdq6u6s" path="res://Scene/Platforms/box.tscn" id="4_hd0p1"]
 [ext_resource type="PackedScene" uid="uid://onugyp1q0g5y" path="res://Scene/Characters/character_body_2d.tscn" id="5_tm2rq"]
+[ext_resource type="PackedScene" uid="uid://cu27wiocnm6ra" path="res://Scene/area_2d.tscn" id="6_gb46t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yfwc"]
 texture = ExtResource("1_ep5pf")
@@ -223,6 +224,9 @@ _data = {
 "move": SubResource("Animation_efgn2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ichi1"]
+size = Vector2(682, 20)
+
 [node name="Level 1" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -259,3 +263,10 @@ position = Vector2(3, -54)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_bottom = 140
 position_smoothing_enabled = true
+
+[node name="Area2D" parent="." instance=ExtResource("6_gb46t")]
+position = Vector2(193, 44)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(331, 0)
+shape = SubResource("RectangleShape2D_ichi1")
