@@ -9,7 +9,6 @@ var gravity
 var alive = true
 var jump_height = 65
 var time_jump_apex = 0.35
-var can_double_jump = false
 var on_ground = false
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -20,7 +19,6 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		on_ground = true
-		can_double_jump = false
 	else:
 		on_ground = false
 	
@@ -43,11 +41,6 @@ func _physics_process(delta):
 		if on_ground:
 			velocity.y = -jump_velocity
 			on_ground = false
-			can_double_jump = true
-		else:
-			if can_double_jump:
-				velocity.y = -jump_velocity
-				can_double_jump = false
 	
 
 	# Get the input direction and handle the movement/deceleration.
@@ -60,4 +53,4 @@ func stop():
 	gravity = 0
 	alive = false
 	velocity = Vector2.ZERO
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scene/restart/restart.tscn")
