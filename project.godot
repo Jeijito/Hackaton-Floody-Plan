@@ -15,6 +15,10 @@ run/main_scene="res://Scene/UI/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+background_music="*res://Assets/h2o hackathon assets/sounds/Sakura-Girl-Daisy-chosic.com_.mp3"
+
 [input]
 
 move_left={
