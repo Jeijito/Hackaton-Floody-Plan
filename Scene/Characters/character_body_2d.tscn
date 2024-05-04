@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://onugyp1q0g5y"]
+[gd_scene load_steps=24 format=3 uid="uid://onugyp1q0g5y"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_r36ne"]
 [ext_resource type="Texture2D" uid="uid://dkh6hoj7geui3" path="res://Assets/h2o hackathon assets/character idle/idle0000.png" id="2_wl660"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://2d31xna02d2f" path="res://Assets/h2o hackathon assets/character run/run0006.png" id="8_7rfdn"]
 [ext_resource type="Texture2D" uid="uid://305l6k0g4orj" path="res://Assets/h2o hackathon assets/character run/run0008.png" id="9_cwk8u"]
 [ext_resource type="Texture2D" uid="uid://cmr67lvfkblse" path="res://Assets/h2o hackathon assets/character run/run0010 - Copy.png" id="10_loe4u"]
+[ext_resource type="AudioStream" uid="uid://dc4fl3g4hrcqc" path="res://Assets/h2o hackathon assets/sounds/jump.wav" id="11_haebg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0ptb"]
 atlas = ExtResource("2_wl660")
@@ -22,6 +23,10 @@ region = Rect2(0, 8, 64, 56)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmpxo"]
 atlas = ExtResource("4_6ku76")
 region = Rect2(0, 7, 64, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n0te"]
+atlas = ExtResource("7_r5xdj")
+region = Rect2(0, 9, 64, 55)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypas3"]
 atlas = ExtResource("5_3hrt8")
@@ -62,6 +67,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n0te")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -106,8 +119,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7tt8"]
-radius = 20.0
-height = 60.0
+radius = 17.0
+height = 58.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
@@ -116,9 +129,12 @@ script = ExtResource("1_r36ne")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q2gd5")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.447045
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -4)
 shape = SubResource("CapsuleShape2D_s7tt8")
+
+[node name="jump_sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_haebg")

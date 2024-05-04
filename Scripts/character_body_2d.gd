@@ -11,6 +11,7 @@ var jump_height = 65
 var time_jump_apex = 0.35
 var on_ground = false
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var jump_sounds = $jump_sounds
 
 func _physics_process(delta):
 	gravity = (2 * jump_height) / pow(time_jump_apex, 2)
@@ -39,6 +40,8 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("jump") and alive:
 		if on_ground:
+			$AnimatedSprite2D.play("jump")
+			jump_sounds.play()
 			velocity.y = -jump_velocity
 			on_ground = false
 	
