@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://8bcajax4vn04"]
+
+[ext_resource type="Script" path="res://Scripts/Snake.gd" id="1_y25kc"]
+[ext_resource type="Texture2D" uid="uid://vg1jv5bocsxl" path="res://Assets/h2o hackathon assets/snake idle/snake idle0000.png" id="2_81r1g"]
+[ext_resource type="Texture2D" uid="uid://bk76kqq2nnv77" path="res://Assets/h2o hackathon assets/snake idle/snake idle0002.png" id="3_fyahc"]
+[ext_resource type="PackedScene" uid="uid://cu27wiocnm6ra" path="res://Scene/area_2d.tscn" id="4_ntsmy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnkpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_81r1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fyahc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsyxn"]
+radius = 16.0
+height = 56.0
+
+[node name="Snake" type="Node2D"]
+script = ExtResource("1_y25kc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_dnkpv")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.892715
+
+[node name="Area2D" parent="." instance=ExtResource("4_ntsmy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bsyxn")

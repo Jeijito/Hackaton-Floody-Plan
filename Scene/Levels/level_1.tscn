@@ -506,7 +506,7 @@ position = Vector2(56, -161)
 texture = ExtResource("8_by68j")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sprite2D"]
-position = Vector2(1000, -2)
+position = Vector2(1000, -7)
 texture = ExtResource("8_by68j")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sprite2D/Sprite2D"]
