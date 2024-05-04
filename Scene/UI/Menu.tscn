@@ -4,10 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cycfhe2adh0n0" path="res://Assets/Background.png" id="1_uuwmx"]
 
 [sub_resource type="SystemFont" id="SystemFont_fbqgp"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_gw8gd"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_48c5r"]
+subpixel_positioning = 0
 
 [node name="Control" type="Control"]
 layout_mode = 3
