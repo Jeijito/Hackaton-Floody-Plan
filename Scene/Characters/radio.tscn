@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr4xxreopvlmt"]
+
+[ext_resource type="Texture2D" uid="uid://bdhdo7h3f4wx" path="res://Assets/h2o hackathon assets/Objects/radio.png" id="1_fq4lo"]
+[ext_resource type="PackedScene" uid="uid://cqypjp58go8lk" path="res://Scene/win.tscn" id="2_f31jl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsfvr"]
+size = Vector2(21, 16)
+
+[node name="Radio" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_fq4lo")
+
+[node name="Win" parent="." instance=ExtResource("2_f31jl")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win"]
+position = Vector2(-0.5, 7)
+shape = SubResource("RectangleShape2D_hsfvr")
