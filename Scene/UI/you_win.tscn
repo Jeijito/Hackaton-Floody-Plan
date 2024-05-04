@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd1jmondvijqq"]
+[gd_scene load_steps=11 format=3 uid="uid://dd1jmondvijqq"]
 
 [ext_resource type="Script" path="res://Scene/UI/you_win.gd" id="1_b3o2g"]
 [ext_resource type="Texture2D" uid="uid://dsqx8nygn8l2m" path="res://Assets/h2o hackathon assets/freetileset/png/BG/BG.png" id="2_wbwbm"]
 [ext_resource type="Shader" path="res://Scene/UI/restart.gdshader" id="3_vql0c"]
+[ext_resource type="FontFile" uid="uid://ck6f8thibspcd" path="res://Assets/h2o hackathon assets/fonts/PixelOperator8-Bold.ttf" id="4_iki0y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3q0ol"]
 shader = ExtResource("3_vql0c")
@@ -188,6 +189,24 @@ offset_bottom = 645.0
 libraries = {
 "": SubResource("AnimationLibrary_owjxk")
 }
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 225.0
+offset_top = 41.0
+offset_right = 875.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_iki0y")
+theme_override_font_sizes/font_size = 80
+text = "You survived!"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)

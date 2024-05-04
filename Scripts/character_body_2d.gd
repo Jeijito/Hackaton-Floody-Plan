@@ -56,4 +56,3 @@ func stop():
 	gravity = 0
 	alive = false
 	velocity = Vector2.ZERO
-	get_tree().change_scene_to_file("res://Scene/restart/restart.tscn")
