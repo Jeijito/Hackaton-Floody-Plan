@@ -119,8 +119,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7tt8"]
-radius = 20.0
-height = 60.0
+radius = 7.0
+height = 50.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
@@ -128,11 +128,14 @@ collision_layer = 2
 script = ExtResource("1_r36ne")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.5, 0)
+scale = Vector2(0.953125, 1)
 sprite_frames = SubResource("SpriteFrames_q2gd5")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -2)
 shape = SubResource("CapsuleShape2D_s7tt8")
 
 [node name="jump_sounds" type="AudioStreamPlayer2D" parent="."]
