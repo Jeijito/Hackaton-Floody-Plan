@@ -40,7 +40,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("jump") and alive:
 		if on_ground:
-			$AnimatedSprite2D.play("jump")
+			animated_sprite.play("jump")
 			jump_sounds.play()
 			velocity.y = -jump_velocity
 			on_ground = false
