@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfor4cdhady8d"]
+[gd_scene load_steps=18 format=3 uid="uid://cfor4cdhady8d"]
 
 [ext_resource type="Texture2D" uid="uid://dcknfmi87c040" path="res://Assets/h2o hackathon assets/freetileset/png/NEW Tiles/tile spritesheet.png" id="1_ep5pf"]
 [ext_resource type="Texture2D" uid="uid://hwgw3q6pl0ja" path="res://Assets/h2o hackathon assets/freetileset/png/house spritesheet/house.png" id="2_evcgn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://de372nv7h2kxl" path="res://Assets/h2o hackathon assets/freetileset/png/house spritesheet/house spritesheet.png" id="4_vwfbn"]
 [ext_resource type="PackedScene" uid="uid://onugyp1q0g5y" path="res://Scene/Characters/character_body_2d.tscn" id="5_tm2rq"]
 [ext_resource type="PackedScene" uid="uid://cu27wiocnm6ra" path="res://Scene/area_2d.tscn" id="6_gb46t"]
+[ext_resource type="Texture2D" uid="uid://dsqx8nygn8l2m" path="res://Assets/h2o hackathon assets/freetileset/png/BG/BG.png" id="8_by68j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yfwc"]
 texture = ExtResource("1_ep5pf")
@@ -462,3 +463,15 @@ position = Vector2(193, 44)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(337, 0)
 shape = SubResource("RectangleShape2D_ichi1")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(56, -161)
+texture = ExtResource("8_by68j")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sprite2D"]
+position = Vector2(1000, -2)
+texture = ExtResource("8_by68j")
