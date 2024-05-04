@@ -466,7 +466,7 @@ position = Vector2(1885, -232)
 position = Vector2(2017, -304)
 
 [node name="Player" parent="." instance=ExtResource("5_tm2rq")]
-position = Vector2(3, -54)
+position = Vector2(3, -25)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
