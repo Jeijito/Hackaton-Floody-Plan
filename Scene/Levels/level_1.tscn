@@ -459,10 +459,10 @@ autoplay = "RESET"
 position = Vector2(1810, -208)
 
 [node name="Box7" parent="Boxes" instance=ExtResource("4_hd0p1")]
-position = Vector2(1906, -241)
+position = Vector2(1885, -232)
 
 [node name="Box8" parent="Boxes" instance=ExtResource("4_hd0p1")]
-position = Vector2(2034, -304)
+position = Vector2(2017, -304)
 
 [node name="Player" parent="." instance=ExtResource("5_tm2rq")]
 position = Vector2(3, -54)
@@ -605,3 +605,9 @@ texture = ExtResource("12_xk4aj")
 
 [node name="Snake" parent="." instance=ExtResource("11_fvmqd")]
 position = Vector2(1445, -177)
+
+[node name="Box" parent="." instance=ExtResource("4_hd0p1")]
+position = Vector2(1956, -269)
+
+[node name="Box2" parent="." instance=ExtResource("4_hd0p1")]
+position = Vector2(2068, -348)
