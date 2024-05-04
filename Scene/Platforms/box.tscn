@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl6i72gdq6u6s"]
+
+[ext_resource type="Texture2D" uid="uid://b337dli8d1hhq" path="res://Assets/h2o hackathon assets/freetileset/png/Object/Box.png" id="1_v7o8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdshm"]
+size = Vector2(32, 32)
+
+[node name="Box" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v7o8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bdshm")
+one_way_collision = true
